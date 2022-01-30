@@ -1,6 +1,6 @@
 const game = {
   title: 'Guess the Number!',
-  biggestNum: 100,
+  biggestNum: 10,
   smallestNum: 1,
   secretNum: null,
   prevGuesses: [],
@@ -11,9 +11,9 @@ const game = {
     // invoke getGuess method inside a loop inside play function
     // add the new guess to the prevGuess array
     while(this.prevGuesses[this.prevGuesses.length -1] !== this.secretNum){
-      this.prevGuesses.push(this.getGuess())
+      this.prevGuesses.push(this.getGuess());
 
-      render()
+      this.render()
     }
     
   },
@@ -25,10 +25,11 @@ const game = {
     // parseInt returns NaN if string cant be parsed into number
     let guess;
     do (
-      guess = parseInt(prompt(`Enter a guess between ${smallestNum} and ${biggestNum}`), guess)
+     guess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}`), guess)
+    
     )
     while( 
-      isNaN(guess) || guess >= this.smallestNum || guess <= this.biggestNum 
+      isNaN(guess) || guess < this.smallestNum || guess > this.biggestNum 
     )
     return guess
 
@@ -36,11 +37,14 @@ const game = {
 
   render: function(){
     if (this.prevGuesses[this.prevGuesses.length - 1] === this.secretNum){
-      alert(`Congrats! You guessed the number in ${this.prevGuesses.length}!`)
+      alert(`Congrats! You guessed the number in ${this.prevGuesses.length} guesses!`)
     }
     else {
-      alert(`Your guess it too ${this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum ? 'high' :'low'} .Previous guesses ${this.prevGuesses}`)
+      alert(`Your guess it too ${this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum ? 'high' :'low'} . Previous guesses ${this.prevGuesses}`)
     }
 
-  }
+  },
+
 }
+
+game.play()
