@@ -10,7 +10,9 @@ const game = {
     
     // invoke getGuess method inside a loop inside play function
     // add the new guess to the prevGuess array
-    this.prevGuesses.push(this.getGuess())
+    while(prevGuesses[this.prevGuesses.length -1] !== this.secretNum){
+      this.prevGuesses.push(this.getGuess())
+    }
     
   },
   
