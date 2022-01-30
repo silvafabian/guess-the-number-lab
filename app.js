@@ -1,7 +1,7 @@
 const game = {
   title: 'Guess the Number!',
-  biggestNum: null,
-  smallestNum: null,
+  biggestNum: 100,
+  smallestNum: 1,
   secretNum: null,
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
