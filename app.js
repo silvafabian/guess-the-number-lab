@@ -10,8 +10,10 @@ const game = {
     
     // invoke getGuess method inside a loop inside play function
     // add the new guess to the prevGuess array
-    while(prevGuesses[this.prevGuesses.length -1] !== this.secretNum){
+    while(this.prevGuesses[this.prevGuesses.length -1] !== this.secretNum){
       this.prevGuesses.push(this.getGuess())
+
+      render()
     }
     
   },
@@ -29,6 +31,16 @@ const game = {
       isNaN(guess) || guess >= this.smallestNum || guess <= this.biggestNum 
     )
     return guess
+
+  },
+
+  render: function(){
+    if (this.prevGuesses[this.prevGuesses.length - 1] === this.secretNum){
+      alert(`Congrats! You guessed the number in ${this.prevGuesses.length}!`)
+    }
+    else {
+      alert(`Your guess it too ${this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum ? 'high' :'low'} .Previous guesses ${this.prevGuesses}`)
+    }
 
   }
 }
