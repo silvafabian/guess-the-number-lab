@@ -10,6 +10,7 @@ const game = {
     
     // invoke getGuess method inside a loop inside play function
     // add the new guess to the prevGuess array
+    // render is invoked here in the loop to keep propmts going
     while(this.prevGuesses[this.prevGuesses.length -1] !== this.secretNum){
       this.prevGuesses.push(this.getGuess());
 
@@ -36,6 +37,9 @@ const game = {
   },
 
   render: function(){
+    // render method declared
+    // play will call this after a guess has been made
+    // use an if-else to display correct message depending on the guess
     if (this.prevGuesses[this.prevGuesses.length - 1] === this.secretNum){
       alert(`Congrats! You guessed the number in ${this.prevGuesses.length} guesses!`)
     }
@@ -45,6 +49,13 @@ const game = {
 
   },
 
-}
+  // new function to reset the ranges and to prompt the user
+  // try setting the ranges to user input inside of the play function
+  // if player enters a guess bigger than secret number, make it the new biggest number
+  // same thing with the lowest
 
+
+}
+console.log(game)
 game.play()
+ 
