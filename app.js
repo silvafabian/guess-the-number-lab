@@ -16,6 +16,9 @@ const game = {
 
       this.render()
     }
+
+    this.userInput = this.smallestNum;
+    this.userInput = this.biggestNum;
     
   },
   
@@ -44,10 +47,16 @@ const game = {
       alert(`Congrats! You guessed the number in ${this.prevGuesses.length} guesses!`)
     }
     else {
-      alert(`Your guess it too ${this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum ? 'high' :'low'} . Previous guesses ${this.prevGuesses}`)
+      alert(`Your guess is too ${this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum ? 'high' :'low'}. Previous guesses ${this.prevGuesses}`)
     }
 
   },
+
+  // userInput: function(){
+  //   this.smallestNum = parseInt(prompt('Enter number for your smallest value'));
+
+  //   this.biggestNum = parseInt(prompt('Enter number for your biggest value'));
+  // }
 
   // new function to reset the ranges and to prompt the user
   // try setting the ranges to user input inside of the play function
@@ -56,6 +65,6 @@ const game = {
 
 
 }
-console.log(game)
-game.play()
- 
+//  console.log(game)
+game.play()  
+
