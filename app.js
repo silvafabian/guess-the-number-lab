@@ -11,16 +11,10 @@ const game = {
     
     
     while(this.prevGuesses[this.prevGuesses.length -1] !== this.secretNum){
-      
-      
       this.prevGuesses.push(this.getGuess());
-
-      this.render()  
+      this.render(); 
     }
-
-    this.userInput = this.smallestNum;
-    this.userInput = this.biggestNum;
-    
+     
   },
   
   getGuess: function(){
@@ -48,12 +42,10 @@ const game = {
 
   },
 
-  
-
-
 }
-//  console.log(game)
+
 game.play()  
+//  console.log(game)
 
 // invoke getGuess method inside a loop inside play function
 // add the new guess to the prevGuess array
